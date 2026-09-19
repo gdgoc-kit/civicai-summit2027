@@ -8,8 +8,8 @@ export default function SiteFooter() {
           CivicAI Summit 2027
         </p>
         <p>
-          主催: GDGoC KIT（Google Developer Groups on Campus / Kanazawa
-          Institute of Technology）
+          主催: GDGoC KIT（Google Developer Groups on Campus 
+          Kanazawa Institute of Technology）
         </p>
         <nav className="flex flex-wrap gap-4 font-mono text-[13px]">
           <Link href="/mypage" className="hover:text-g-blue">
@@ -42,8 +42,7 @@ export default function SiteFooter() {
           </a>
         </nav>
         <p className="text-xs text-foreground-soft">
-          &copy; {new Date().getFullYear()} GDGoC KIT ／
-          このページの内容はすべて仮のものです。
+          &copy; {new Date().getFullYear()} GDGoC KIT
         </p>
       </div>
     </footer>

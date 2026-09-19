@@ -27,10 +27,10 @@ export const programSchedule = [
     title: "セッション",
     venues: ["会場A", "会場B"],
     rows: [
-      { time: "10:00〜10:30", content: "受付" },
-      { time: "10:30〜10:45", content: "オープニング" },
-      { time: "10:45〜11:30", content: "Googler講演（基調講演）" },
-      { time: "11:35〜12:15", content: "CivicTech講演" },
+      { time: "9:30〜10:00", content: "受付" },
+      { time: "10:00〜10:15", content: "オープニング" },
+      { time: "10:15〜11:00", content: "Googler講演（基調講演）" },
+      { time: "11:00〜12:15", content: "CivicTech講演" },
       { time: "12:15〜13:00", content: "昼食" },
       {
         time: "13:00〜14:00",
@@ -52,7 +52,7 @@ export const programSchedule = [
   {
     day: "2日目",
     title: "ハッカソン（1日開催）",
-    note: "10:00〜17:45は、会場A・B・C・Dの4会場で同時進行します。",
+    note: "10:00〜17:30は、会場A・B・C・Dの4会場で同時進行します。",
     venues: ["会場A", "会場B", "会場C", "会場D"],
     rows: [
       { time: "9:00〜9:30", content: "受付" },
@@ -60,16 +60,16 @@ export const programSchedule = [
       { time: "9:45〜10:00", content: "休憩" },
       { time: "10:00〜12:00", content: "開発" },
       { time: "12:00〜13:00", content: "昼食" },
-      { time: "13:00〜15:00", content: "開発" },
+      { time: "13:00〜15:00", content: "開発（15時コードフリーズ）" },
       { time: "15:00〜15:30", content: "発表資料等作成" },
-      { time: "15:30〜15:45", content: "休憩" },
-      { time: "15:45〜16:45", content: "発表（予選）" },
-      { time: "16:45〜17:00", content: "休憩" },
-      { time: "17:00〜17:45", content: "発表（本選）" },
-      { time: "17:45〜18:00", content: "クロージング" },
-      { time: "18:00〜18:10", content: "休憩" },
+      { time: "15:30〜15:40", content: "休憩" },
+      { time: "15:40〜16:40", content: "発表（予選）" },
+      { time: "16:40〜16:50", content: "休憩" },
+      { time: "16:50〜17:30", content: "発表（本選）" },
+      { time: "17:30〜17:45", content: "クロージング" },
+      { time: "17:45〜18:00", content: "休憩" },
       {
-        time: "18:10〜19:00",
+        time: "18:00〜19:00",
         content: "懇親会設営（会場A・B）／デモタイム（会場C・D）",
         byVenue: {
           会場A: "懇親会設営",
@@ -79,10 +79,10 @@ export const programSchedule = [
         } as Record<string, string>,
       },
       {
-        time: "19:00〜20:00",
+        time: "19:00〜20:30",
         content: "懇親会（表彰・企業賞を同時開催）",
       },
-      { time: "20:00〜21:00", content: "撤収" },
+      { time: "20:30〜21:00", content: "撤収" },
     ],
   },
 ];
@@ -168,7 +168,7 @@ export const sponsorFundingPlans = [
     name: "基本プラン",
     content:
       "公式サイト等へのロゴ掲載、企業・団体紹介文の掲載、参加者向けノベルティの配布。",
-    price: "50,000円",
+    price: "100,000円",
   },
   {
     name: "CM放映（30秒）",
@@ -207,7 +207,7 @@ export const sponsorGoodsCategories = [
   },
   {
     name: "賞品提供",
-    body: "最優秀賞および優秀賞の受賞チームへ贈呈する賞品の提供。1チーム分は10,000円相当が目安で、1枠につき優秀賞・最優秀賞の合計2チーム分をご用意いただきます。",
+    body: "最優秀賞及び優秀賞の受賞チームへ贈呈する賞品の提供。",
   },
   {
     name: "運営用物品提供",
@@ -219,7 +219,6 @@ export const sponsorPartnerCooperations = [
   "ハッカソンで取り扱う地域課題やテーマの提供",
   "地域課題に関する情報、事例または公開データの提供",
   "セッション、パネルディスカッション等への登壇",
-  "ハッカソン参加者へのメンタリング",
   "成果物に対するフィードバック",
   "関係者や地域コミュニティへの広報協力",
   "その他、イベントの企画・運営に関する協力",
@@ -260,6 +259,21 @@ export const sponsorIndividualCategories = [
     body: "イベントで発生する弁当容器・包装材・飲料容器等の廃棄物の回収・処理またはその費用の支援。",
   },
 ];
+
+export const specialSponsorshipCategories = [
+  {
+    name: "地元金融機関特別枠",
+    body: "地元金融機関の皆さま向けに、資金協賛・物品協賛・CivicTechパートナー・個別協賛のいずれにも該当しない、特別な形での協賛。",
+  },
+  {
+    name: "公的機関・広域連携枠",
+    body: "公的機関・広域連携団体の皆さま向けに、資金協賛・物品協賛・CivicTechパートナー・個別協賛のいずれにも該当しない、特別な形での協賛。",
+  },
+  {
+    name: "環境・廃棄物処理スポンサー枠",
+    body: "環境・廃棄物処理スポンサーとして、イベントで発生する弁当容器・包装材・飲料容器等の廃棄物の回収・処理またはその費用の支援。",
+  },
+]
 
 export const newsPosts: { date: string; title: string; body: string }[] = [
   {
