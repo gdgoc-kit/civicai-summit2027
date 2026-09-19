@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 export default function ProgramPage() {
   return (
     <div className="pb-20">
-      <PageHeader
-        eyebrow="プログラム"
-        title="2日間のプログラム構成（予定）"
-      />
+      <PageHeader eyebrow="プログラム" title="プログラム" />
       <div className="mx-auto max-w-5xl px-6">
+        <p className="mt-2 text-xs text-foreground-soft">
+          このプログラムは現在調整中です。
+        </p>
         <div className="mt-10 space-y-10">
           {programSchedule.map((day) => (
             <div

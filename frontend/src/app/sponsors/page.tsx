@@ -190,7 +190,7 @@ export default function SponsorsPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href="mailto:kit@gdgoc.jp"
+              href="mailto:gdgockit-sponsor@lifecore.jp"
               className="inline-block rounded-full bg-g-blue px-7 py-3 text-sm font-bold text-white transition-colors hover:opacity-90"
             >
               メールで問い合わせる

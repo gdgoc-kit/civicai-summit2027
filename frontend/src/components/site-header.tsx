@@ -69,12 +69,12 @@ export default async function SiteHeader() {
           <AuthStatus loggedIn={loggedIn} />
         </div>
 
-        <Link
-          href="/register"
-          className="relative z-40 ml-auto shrink-0 rounded-full bg-g-blue px-5 py-2 text-sm font-bold text-white transition-colors duration-200 hover:bg-[#1a56c4] lg:ml-0"
+        <span
+          aria-disabled="true"
+          className="relative z-40 ml-auto shrink-0 cursor-not-allowed rounded-full bg-gray-500 px-5 py-2 text-sm font-bold text-white lg:ml-0"
         >
           {registerCtaLabel}
-        </Link>
+        </span>
 
         <MobileNav navLinks={navLinks} loggedIn={loggedIn} />
       </div>

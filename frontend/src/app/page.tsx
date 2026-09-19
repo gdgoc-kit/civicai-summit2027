@@ -39,12 +39,12 @@ export default async function Home() {
             学生・技術者・行政・企業が集う、産官学民オープンイノベーション。
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="/register"
-              className="rounded-full bg-g-blue px-7 py-3 text-sm font-bold text-white transition-colors hover:bg-[#1a56c4]"
+            <span
+              aria-disabled="true"
+              className="pointer-events-none cursor-not-allowed rounded-full bg-gray-500 px-7 py-3 text-sm font-bold text-white"
             >
               参加登録はこちら
-            </Link>
+            </span>
             <Link
               href="/about"
               className="rounded-full border border-rule px-7 py-3 text-sm font-bold text-foreground transition-colors hover:border-g-blue hover:text-g-blue"
