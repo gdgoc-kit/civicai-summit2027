@@ -9,6 +9,7 @@ import {
   sponsorPartnerBenefits,
   sponsorPartnerCooperations,
   specialSponsorshipCategories,
+  sponsorPlanList,
 } from "@/lib/site-content";
 
 export const metadata: Metadata = {
@@ -26,6 +27,29 @@ export default function SponsorsPage() {
         description="CivicAI Summit 2027では、基本プランに各種オプションを追加する資金協賛のほか、物品協賛、CivicTechパートナー、個別協賛など、さまざまな形での協賛を募集しています。次世代の技術人材との接点や、地域における新しいブランディングの機会として、ぜひご検討ください。"
         descriptionMaxWidthClassName="max-w-none"
       />
+      
+      <div className="mx-auto max-w-5xl px-6">
+        {/* 種別一覧 */}
+        <section className="mt-14">
+          <h2 className="font-display text-2xl font-extrabold">募集一覧</h2>
+          <p className="mt-3 text-sm text-foreground-soft">
+            募集中の協賛についてご紹介します。
+          </p>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {sponsorPlanList.map((item) => (
+              <div
+                key={item.name}
+                className="rounded-2xl border border-rule bg-card p-6"
+              >
+                <h3 className="font-display font-bold">{item.name}</h3>
+                <p className="mt-2 text-sm text-foreground-soft">
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
 
       <div className="mx-auto max-w-5xl px-6">
         {/* 資金協賛 */}
@@ -179,7 +203,7 @@ export default function SponsorsPage() {
         <section className="mt-14">
           <h2 className="font-display text-2xl font-extrabold">特別協賛枠</h2>
           <p className="mt-3 text-sm text-foreground-soft">
-            資金協賛および物品協力に加えて、イベントの実施に必要な通信環境、交通、飲食、廃棄物処理等をご支援いただく個別協賛を募集します。物品・サービスの無償提供のほか、費用の一部負担や通常料金からの割引による支援も可能です。協賛金額・提供内容・募集枠は、個別に協議のうえ決定します。
+            資金協賛や物品協賛に加え、企業・団体ならではの特別協賛を募集します。協賛内容やリターンについてはお問い合わせください。
           </p>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             {specialSponsorshipCategories.map((item) => (
