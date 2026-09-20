@@ -178,11 +178,11 @@ export default function SponsorsPage() {
           </p>
         </section>
 
-        {/* 個別協賛 */}
+{/* 個別協賛 */}
         <section className="mt-14">
           <h2 className="font-display text-2xl font-extrabold">個別協賛</h2>
           <p className="mt-3 text-sm text-foreground-soft">
-            資金協賛および物品協力に加えて、イベントの実施に必要な通信環境、交通、飲食、廃棄物処理等をご支援いただく個別協賛を募集します。物品・サービスの無償提供のほか、費用の一部負担や通常料金からの割引による支援も可能です。協賛金額・提供内容・募集枠は、個別に協議のうえ決定します。
+            資金協賛および物品協力に加えて、イベントの実施に必要な通信環境、交通、飲食、廃棄物処理等をご支援いただく個別協賛を募集します。物品・サービスの無償提供や特別価格でのご提供、費用の一部負担など柔軟な支援形態が可能です。協賛金額・提供内容・募集枠は、個別に協議のうえ決定します。
           </p>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             {sponsorIndividualCategories.map((item) => (
@@ -203,7 +203,7 @@ export default function SponsorsPage() {
         <section className="mt-14">
           <h2 className="font-display text-2xl font-extrabold">特別協賛枠</h2>
           <p className="mt-3 text-sm text-foreground-soft">
-            資金協賛や物品協賛に加え、企業・団体ならではの特別協賛を募集します。協賛内容やリターンについてはお問い合わせください。
+            地元金融機関様や公的機関・広域連携団体様向けに、双方の強みを生かした特別パートナーシップをご用意しています。詳細やご提案については、運営窓口までお問い合わせください。
           </p>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             {specialSponsorshipCategories.map((item) => (
