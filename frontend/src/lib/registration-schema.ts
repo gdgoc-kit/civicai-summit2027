@@ -65,11 +65,22 @@ export const affiliationAreaOptions = [
 ] as const;
 
 export const mediaConsentOptions = [
-  { value: "consent", label: "撮影および広報媒体への掲載に同意する" },
+  {
+    value: "consent",
+    label: "撮影および広報媒体への掲載に同意する",
+    description:
+      "集合写真や作業風景など、公式サイト・公式SNSへの掲載に同意します。",
+  },
   {
     value: "groupOnly",
-    label:
-      "集合写真は問題ないが、個人を中心に撮影した写真の掲載は希望しない",
+    label: "集合写真・遠景のみ可（個人のアップは不可）",
+    description:
+      "全体写真や後ろ姿・遠景の映り込みは問題ありませんが、顔がはっきりわかる単独・アップ写真の掲載は控えてほしいです。",
   },
-  { value: "individual", label: "撮影・掲載に関して個別の配慮を希望する" },
+  {
+    value: "individual",
+    label: "個別の配慮を希望する",
+    description:
+      "事情により映り込みや掲載に関して特別な配慮を希望します（当日、識別用の名札や座席等で対応いたします）。",
+  },
 ] as const;

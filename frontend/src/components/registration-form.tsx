@@ -279,17 +279,29 @@ export default function RegistrationForm({ userId }: { userId: string }) {
             errors.mediaConsent ? `${mediaConsentId}-error` : undefined
           }
         >
-          {mediaConsentOptions.map((opt) => (
-            <label key={opt.value} className="flex items-start gap-2 text-sm">
-              <input
-                type="radio"
-                value={opt.value}
-                className="mt-0.5 accent-[color:var(--g-blue)]"
-                {...register("mediaConsent")}
-              />
-              {opt.label}
-            </label>
-          ))}
+        {mediaConsentOptions.map((opt) => (
+          <label
+            key={opt.value}
+            className="flex cursor-pointer items-start gap-3 rounded-lg border border-transparent p-2 transition-colors hover:bg-card/50"
+          >
+            <input
+              type="radio"
+              value={opt.value}
+              className="mt-1 accent-[color:var(--g-blue)] shrink-0"
+              {...register("mediaConsent")}
+            />
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-foreground">
+                {opt.label}
+              </span>
+              {opt.description && (
+                <span className="mt-0.5 text-xs leading-relaxed text-foreground-soft">
+                  {opt.description}
+                </span>
+              )}
+            </div>
+          </label>
+        ))}
         </div>
         <FieldErrorMessage
           error={errors.mediaConsent}
