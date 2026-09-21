@@ -27,6 +27,7 @@ export default function RegistrationForm({ userId }: { userId: string }) {
       nickname: "",
       nicknameReading: "",
       affiliation: "",
+      dietaryRestrictions: "",
       accessibilityNotes: "",
       remarks: "",
     },
@@ -44,6 +45,8 @@ export default function RegistrationForm({ userId }: { userId: string }) {
   const affiliationAreaId = useId();
   const mediaConsentId = useId();
   const privacyConsentId = useId();
+  const marketingConsentId = useId();
+  const dietaryRestrictionsId = useId();
   const accessibilityNotesId = useId();
   const remarksId = useId();
 
@@ -60,6 +63,7 @@ export default function RegistrationForm({ userId }: { userId: string }) {
       affiliation_area: data.affiliationArea,
       media_consent: data.mediaConsent,
       privacy_consent: data.privacyConsent,
+      dietary_restrictions: data.dietaryRestrictions || null,
       accessibility_notes: data.accessibilityNotes || null,
       remarks: data.remarks || null,
     });
@@ -310,7 +314,7 @@ export default function RegistrationForm({ userId }: { userId: string }) {
       </fieldset>
 
       <div>
-        <label className="flex items-start gap-2 text-sm">
+        <label className="flex cursor-pointer items-start gap-2 text-sm font-bold">
           <input
             type="checkbox"
             id={privacyConsentId}
@@ -318,19 +322,18 @@ export default function RegistrationForm({ userId }: { userId: string }) {
             aria-describedby={
               errors.privacyConsent ? `${privacyConsentId}-error` : undefined
             }
-            className="mt-1 accent-[color:var(--g-blue)]"
+            className="mt-1 shrink-0 accent-[color:var(--g-blue)]"
             {...register("privacyConsent")}
           />
           <span>
-            8. 個人情報の取扱方針に同意する
-            <span className="text-g-red"> *</span>
+            8. 個人情報の取扱方針に同意する <span className="text-g-red">*</span>
           </span>
         </label>
         <a
           href="/privacy"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-1 inline-block text-xs font-bold text-g-blue hover:underline"
+          className="mt-1 block text-xs font-bold text-g-blue hover:underline"
         >
           個人情報の取扱方針を確認する →
         </a>
@@ -341,8 +344,52 @@ export default function RegistrationForm({ userId }: { userId: string }) {
       </div>
 
       <div>
+        <label className="flex cursor-pointer items-start gap-2 text-sm">
+          <input
+            type="checkbox"
+            id={marketingConsentId}
+            className="mt-1 shrink-0 accent-[color:var(--g-blue)]"
+            {...register("marketingConsent")}
+          />
+          <span>
+            <span className="font-bold">9. 情報提供の受け取り</span>
+            <span className="ml-1.5 text-xs text-foreground-soft">任意</span>
+            <span className="mt-0.5 block text-xs text-foreground-soft">
+              協賛企業・団体等からの採用・インターンシップ情報やイベント案内等の情報提供を希望する
+            </span>
+          </span>
+        </label>
+      </div>
+
+      <div>
+        <label htmlFor={dietaryRestrictionsId} className="text-sm font-bold">
+          10. 食事制限・アレルギー
+        </label>
+        <p className="mt-1 text-xs text-foreground-soft">
+          アレルギーや食事制限がある場合はご記入ください。懇親会等の飲食提供の際に配慮します。
+        </p>
+        <textarea
+          id={dietaryRestrictionsId}
+          rows={3}
+          maxLength={500}
+          aria-invalid={!!errors.dietaryRestrictions}
+          aria-describedby={
+            errors.dietaryRestrictions
+              ? `${dietaryRestrictionsId}-error`
+              : undefined
+          }
+          className="mt-2 w-full resize-y rounded-lg border border-rule bg-white px-4 py-2.5 text-sm outline-none focus:border-g-blue"
+          {...register("dietaryRestrictions")}
+        />
+        <FieldErrorMessage
+          error={errors.dietaryRestrictions}
+          id={`${dietaryRestrictionsId}-error`}
+        />
+      </div>
+
+      <div>
         <label htmlFor={accessibilityNotesId} className="text-sm font-bold">
-          9. 必要な配慮
+          11. 必要な配慮
         </label>
         <p className="mt-1 text-xs text-foreground-soft">
           参加にあたって必要な配慮や、運営へ事前に伝えておきたいことがあればご記入ください。
@@ -368,7 +415,7 @@ export default function RegistrationForm({ userId }: { userId: string }) {
 
       <div>
         <label htmlFor={remarksId} className="text-sm font-bold">
-          10. 備考
+          12. 備考
         </label>
         <p className="mt-1 text-xs text-foreground-soft">
           その他、運営への連絡事項があればご記入ください。

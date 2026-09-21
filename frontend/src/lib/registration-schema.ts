@@ -34,6 +34,13 @@ export const registrationSchema = z.object({
   privacyConsent: z.literal(true, {
     message: "個人情報の取扱方針への同意が必要です",
   }),
+  marketingConsent: z.boolean().optional(),
+  dietaryRestrictions: z
+    .string()
+    .trim()
+    .max(500, "500文字以内で入力してください")
+    .optional()
+    .or(z.literal("")),
   accessibilityNotes: z
     .string()
     .trim()
