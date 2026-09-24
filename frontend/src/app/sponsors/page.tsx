@@ -29,6 +29,14 @@ export default function SponsorsPage() {
       />
       
       <div className="mx-auto max-w-5xl px-6">
+        <p className="mt-8 rounded-2xl border border-rule bg-card p-4 text-xs text-foreground-soft">
+          ※
+          CivicAI Summit 2027は、GDGoC（Google Developer Groups on
+          Campus）の一チャプターであるGDGoC
+          KITが企画・主催する独自のイベントです。GDGoC自体はGoogleの技術に関心を持つ学生が自主的に運営するコミュニティであり、Google社が直接運営する組織ではありません。本イベントおよび協賛の受付は、GDGoC
+          KIT（CivicAI Summit 2027運営チーム）が主体となって行うものであり、Google社が主催・運営・後援するものではない点にご留意ください。
+        </p>
+
         {/* 種別一覧 */}
         <section className="mt-14">
           <h2 className="font-display text-2xl font-extrabold">募集一覧</h2>

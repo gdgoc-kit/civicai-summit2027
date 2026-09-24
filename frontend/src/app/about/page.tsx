@@ -23,11 +23,28 @@ export default function AboutPage() {
           Developersのサポートを受けながら活動する、北陸で唯一のGDGoCチャプターです。2023年10月の発足以来、学内外で継続的にイベントを開催しており、直近では178名規模のセッションを運営した実績があります。
         </p>
 
-        <div className="mt-10 rounded-2xl border border-rule bg-card p-6">
-          <h2 className="font-display font-bold">CivicTechとは</h2>
-          <p className="mt-2 text-sm text-foreground-soft">
-            CivicTech（シビックテック）とは、市民が主体となってテクノロジーを活用し、行政サービスや地域社会が抱える課題の解決に取り組む活動を指す言葉です。エンジニアやデザイナーに限らず、多様な立場の人が技術を通じて「まちをより良くする」ことを目指す、世界的に広がりつつある取り組みです。
-          </p>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <div className="rounded-2xl border border-rule bg-card p-6">
+            <h2 className="font-display font-bold">GDGoCとは</h2>
+            <p className="mt-2 text-sm text-foreground-soft">
+              GDGoC（Google Developer Groups on
+              Campus、旧称：GDSC）は、Googleの技術やプロダクトに関心を持つ学生が中心となって、世界中の大学キャンパスで自主的に運営するコミュニティです。Google
+              Developersによる技術サポートやガイドラインの提供を受けていますが、Google社が直接運営・管理する組織ではなく、各チャプターは学生主体で独立して活動しています。GDGoC
+              KITはその北陸で唯一のチャプターです。
+            </p>
+            <p className="mt-2 text-xs text-foreground-soft">
+              ※
+              本イベント（CivicAI
+              Summit）はGDGoC
+              KITが企画・主催する独自のイベントであり、Google社が主催・運営・後援するものではありません。
+            </p>
+          </div>
+          <div className="rounded-2xl border border-rule bg-card p-6">
+            <h2 className="font-display font-bold">CivicTechとは</h2>
+            <p className="mt-2 text-sm text-foreground-soft">
+              CivicTech（シビックテック）とは、市民が主体となってテクノロジーを活用し、行政サービスや地域社会が抱える課題の解決に取り組む活動を指す言葉です。エンジニアやデザイナーに限らず、多様な立場の人が技術を通じて「まちをより良くする」ことを目指す、世界的に広がりつつある取り組みです。
+            </p>
+          </div>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
