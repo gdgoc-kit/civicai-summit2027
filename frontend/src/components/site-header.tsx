@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import MobileNav from "./mobile-nav";
 import AuthStatus from "./auth-status";
+import SiteBrand from "./site-brand";
 import { createClient } from "@/lib/supabase/server";
 import { getReceptionStatus } from "@/lib/reception-window";
 
@@ -36,22 +36,7 @@ export default async function SiteHeader() {
   return (
     <header className="relative border-b border-rule bg-card">
       <div className="mx-auto flex max-w-5xl items-center gap-4 px-6 py-4">
-        <Link
-          href="/"
-          className="relative z-40 flex shrink-0 flex-col items-center"
-        >
-          <Image
-            src="/gdgoc-kit-logo.png"
-            alt="GDGoC KIT"
-            width={1920}
-            height={390}
-            className="h-6 w-auto shrink-0 rounded-none sm:h-7"
-            priority
-          />
-          <span className="hidden font-display text-xs font-extrabold tracking-tight sm:inline">
-            CivicAI Summit <span className="text-g-blue">2027</span>
-          </span>
-        </Link>
+        <SiteBrand />
 
         <nav className="relative z-40 hidden flex-1 flex-wrap items-center gap-5 text-sm text-foreground-soft lg:flex">
           {navLinks.map((link) => (
